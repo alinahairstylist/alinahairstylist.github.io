@@ -1,0 +1,105 @@
+.navbar {
+    background-color: rgba(245, 245, 245, 0.9);
+    /*border-bottom: 1px solid black;*/
+    -webkit-box-shadow: 0 0 20px 5px #00000066;
+    box-shadow: 0 0 20px 5px #00000066;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 4;
+
+    overflow: hidden;
+}
+
+#nav-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+#nav-logo {
+    height: 4rem;
+    margin: 1rem 2.5rem;
+}
+
+.nav-item {
+    margin: 0.5rem 2rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.nav-item rect {
+    fill: var(--bright-color);
+    /*fill: var(--dark-color);*/
+}
+.nav-item:hover rect {
+    fill: var(--alt-color);
+}
+
+.scissor-button {
+    font-weight: bold;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;/*2vw;*/
+    display: flex;
+    flex-direction: row;
+    color: black;
+}
+.scissor-button:hover {
+    color: var(--alt-color);
+}
+@media (min-width: 1155px) {
+    .scissor-button {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 980px) {
+    #nav-logo {
+        margin: 1rem 5vw;
+    }
+
+    .nav-item {
+        margin: 0.5rem calc(5vw - 20px);
+    }
+}
+
+.scissor-button::before {
+    /*content: "✂";*/
+    content: url("data:image/svg+xml,%3Csvg width='30' height='40' viewBox='0 0 432 387' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Scissors'%3E%3Cpath id='Part B' d='M190.42 162.58C135.11 122.47 94.689 113.8 98.557 100.22C101.58 89.6 110.67 94.7 117.08 66.63C123.24 39.68 101.12 12.15 74.424 6.43002C48.261 -1.18997 15.377 11.16 7.259 38.79C-2.6362 66.13 13.447 98.72 40.678 108.45C71.808 122.54 112.92 129.77 148.208 175.33L175.298 210.29L346.138 331.3C368.218 344.834 397.608 352.958 425.578 335.415L190.418 162.575L190.42 162.58ZM87.3 32.76C110.551 56.07 96.371 97.3 65.335 97.23C36.782 98.88 10.777 64.17 27.075 38.38C38.503 16.65 71.384 16.81 87.3 32.76Z' fill='%2385a777' stroke='%2385a777' strokeWidth='7.5'/%3E%3Cpath id='Part A' d='M191.92 224.4C136.53 264.39 96.088 272.97 99.926 286.561C102.93 297.188 112.03 292.104 118.38 320.185C124.47 347.147 102.29 374.63 75.584 380.291C49.404 387.851 16.548 375.429 8.49101 347.783C-1.34279 320.42 14.813 287.867 42.066 278.2C73.227 264.17 114.36 257.04 149.746 211.56L176.906 176.65L348.016 56.03C370.136 42.54 399.536 34.49 427.466 52.09L191.916 224.4L191.92 224.4ZM88.52 353.99C111.822 330.736 97.734 289.476 66.699 289.478C38.149 287.764 12.067 322.411 28.308 348.244C39.687 369.991 72.568 369.908 88.52 353.99Z' fill='%2385a777' stroke='%2385a777' strokeWidth='7.5'/%3E%3C/g%3E%3C/svg%3E");
+    color: var(--alt-color);
+    position: absolute;
+    opacity: 1;
+    transform: translateX(-110%);
+    transition: transform 0.2s ease, opacity 0.3s;
+    pointer-events: none;
+}
+.scissor-button:hover::before {
+    content: url("data:image/svg+xml,%3Csvg width='30' height='40' viewBox='0 0 494 387' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Scissors'%3E%3Cpath id='Part B' d='M213.085 169.346C149.279 144.918 107.991 147.005 108.212 132.887C108.384 121.846 118.484 124.42 117.41 95.6473C116.385 68.0212 87.8938 47.1544 60.627 48.5387C33.3833 47.9498 4.8162 68.39 4.12598 97.1796C1.64407 126.149 25.6142 153.466 54.4356 155.817C88.1516 161.369 129.734 157.712 175.611 192.587L210.827 219.344L407.165 292.014C431.996 299.372 462.487 299.613 484.963 275.428L213.082 169.342L213.085 169.346ZM79.879 70.639C108.371 87.1369 105.345 130.632 75.3485 138.597C48.1954 147.581 14.0929 120.784 23.1607 91.6549C28.5751 67.7075 60.3771 59.3518 79.879 70.639Z' fill='%2385a777' stroke='%2385a777' stroke-width='7.5'/%3E%3Cpath id='Part A' d='M214.608 217.616C150.755 241.908 109.47 239.728 109.66 253.849C109.811 264.892 119.917 262.336 118.783 291.104C117.687 318.723 89.1496 339.529 61.8884 338.085C34.6437 338.612 6.12237 318.109 5.49522 289.32C3.07857 260.344 27.1092 233.082 55.9356 230.798C89.666 225.311 131.243 229.07 177.194 194.298L212.464 167.607L408.962 95.3839C433.82 88.0786 464.302 87.9122 486.725 112.141L214.604 217.615L214.608 217.616ZM81.1908 316.029C109.717 299.598 106.788 256.098 76.8103 248.067C49.6767 239.022 15.5161 265.738 24.5177 294.894C29.8804 318.845 61.6625 327.276 81.1908 316.029Z' fill='%2385a777' stroke='%2385a777' stroke-width='7.5'/%3E%3C/g%3E%3C/svg%3E%0A");
+    opacity: 0;
+    transform: translateX(210%);
+}
+
+/* ========== *//* ========== */
+/* ========== *//* ========== */
+
+#menu {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: rgba(245, 245, 245, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ========== *//* ========== */
+/* ========== *//* ========== */
