@@ -76,7 +76,7 @@ export class MainApp extends Component {
     return (
       <>
         <Header scrollCallback={this.scrollTo} mobile={this.state.portrait}/>
-        {/*<div className={"grain"}/>*/}
+        <div className={"grain"}/>
 
         <div className={"banner"}>
 
